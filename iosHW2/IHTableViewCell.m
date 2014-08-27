@@ -39,11 +39,15 @@
         
         
         self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(120.0, 50.0, 180.0, 50.0)];
-        //self.nameLabel.backgroundColor = [UIColor greenColor];
+        self.nameLabel.backgroundColor = [UIColor greenColor];
         
         self.nameLabel.adjustsFontSizeToFitWidth = YES;
         
         [self.nameLabel setNumberOfLines:2];
+        if (self.nameLabel.numberOfLines>0) {
+            
+        }
+        
         [self.contentView addSubview:self.nameLabel];
         
         if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
