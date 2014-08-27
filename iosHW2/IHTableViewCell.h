@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageViewAligned.h"
 
 @interface IHTableViewCell : UITableViewCell{
    
   
 }
 
-@property (nonatomic, strong)UIImageView *imgView;
+//@property (nonatomic, strong)UIImageView *imgView;
+@property (nonatomic, strong)UIImageViewAligned *imgView;
 @property (nonatomic, strong)UILabel *catDscLabel;
 @property (nonatomic, strong)UILabel *nameLabel;
 

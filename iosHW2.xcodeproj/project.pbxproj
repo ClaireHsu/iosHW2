@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B52C90119ADE501009E8B57 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B52C90019ADE501009E8B57 /* UIImageViewAligned.m */; };
 		3BBD853119AB38F500C3CB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBD853019AB38F500C3CB71 /* Foundation.framework */; };
 		3BBD853319AB38F500C3CB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBD853219AB38F500C3CB71 /* CoreGraphics.framework */; };
 		3BBD853519AB38F500C3CB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBD853419AB38F500C3CB71 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B52C8FF19ADE501009E8B57 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
+		3B52C90019ADE501009E8B57 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
 		3BBD852D19AB38F500C3CB71 /* iosHW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosHW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD853019AB38F500C3CB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BBD853219AB38F500C3CB71 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B52C8FE19ADE501009E8B57 /* UIImageViewAligned */ = {
+			isa = PBXGroup;
+			children = (
+				3B52C8FF19ADE501009E8B57 /* UIImageViewAligned.h */,
+				3B52C90019ADE501009E8B57 /* UIImageViewAligned.m */,
+			);
+			path = UIImageViewAligned;
+			sourceTree = "<group>";
+		};
 		3BBD852419AB38F500C3CB71 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,7 @@
 		3BBD853619AB38F500C3CB71 /* iosHW2 */ = {
 			isa = PBXGroup;
 			children = (
+				3B52C8FE19ADE501009E8B57 /* UIImageViewAligned */,
 				3BBD853F19AB38F500C3CB71 /* IHAppDelegate.h */,
 				3BBD854019AB38F500C3CB71 /* IHAppDelegate.m */,
 				3BBD858219AC4A4400C3CB71 /* IHRootTableViewController.h */,
@@ -266,6 +279,7 @@
 				3BBD858519AC4A4400C3CB71 /* IHRootTableViewController.m in Sources */,
 				3BBD853D19AB38F500C3CB71 /* main.m in Sources */,
 				3BBD854119AB38F500C3CB71 /* IHAppDelegate.m in Sources */,
+				3B52C90119ADE501009E8B57 /* UIImageViewAligned.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
