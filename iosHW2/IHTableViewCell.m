@@ -23,30 +23,30 @@
         self.imgView = [[UIImageViewAligned alloc]initWithFrame:CGRectMake(0.0, 0.0, 100.0,100.0)];
         //self.imgView.backgroundColor = [UIColor greenColor];
         self.imgView.contentMode = UIViewContentModeScaleAspectFit;
-        self.imgView.clipsToBounds = YES;
+        //self.imgView.clipsToBounds = YES;
         self.imgView.alignLeft = YES;
         
         [self.contentView addSubview:self.imgView];
         
 
-        self.catDscLabel = [[UILabel alloc]initWithFrame:CGRectMake(120.0, 0.0, 180.0, 50.0)];
+        self.catDscLabel = [[VALabel alloc]initWithFrame:CGRectMake(120.0, 0.0, 180.0, 50.0)];
         //self.catDscLabel.backgroundColor = [UIColor grayColor];
      
         self.catDscLabel.adjustsFontSizeToFitWidth = YES;
       
         [self.catDscLabel setNumberOfLines:2];
+        self.catDscLabel.verticalAlignment = VerticalAlignmentTop;
+        
         [self.contentView addSubview:self.catDscLabel];
         
         
-        self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(120.0, 50.0, 180.0, 50.0)];
-        self.nameLabel.backgroundColor = [UIColor greenColor];
+        self.nameLabel = [[VALabel alloc]initWithFrame:CGRectMake(120.0, 50.0, 180.0, 50.0)];
+        //self.nameLabel.backgroundColor = [UIColor greenColor];
         
         self.nameLabel.adjustsFontSizeToFitWidth = YES;
         
         [self.nameLabel setNumberOfLines:2];
-        if (self.nameLabel.numberOfLines>0) {
-            
-        }
+        self.nameLabel.verticalAlignment = VerticalAlignmentBottom;
         
         [self.contentView addSubview:self.nameLabel];
         
