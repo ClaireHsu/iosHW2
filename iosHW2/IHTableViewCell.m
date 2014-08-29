@@ -16,9 +16,10 @@
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithStyle:style reuseIdentifier:@"ff"];
     if (self) {
         
+        NSLog(@"in");
         
         self.imgView = [[UIImageViewAligned alloc]initWithFrame:CGRectMake(0.0, 0.0, 100.0,100.0)];
         //self.imgView.backgroundColor = [UIColor greenColor];

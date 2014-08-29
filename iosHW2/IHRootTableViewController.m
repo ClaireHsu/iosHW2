@@ -24,7 +24,6 @@
 {
     [super viewDidLoad];
     
-    
     indicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     indicatorView.center = self.tableView.center;
     [indicatorView startAnimating];
@@ -61,11 +60,14 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = YES;
+    
 
 }
 
 -(void)updateUI:(IHTableViewCell *)cell index:(int)rowIndex{
     
+    
+    NSLog(@"in %d", rowIndex);
     //NSLog(@"items_num:%d",[itemsArr count]);
     if ([jsonDataAll count]>0) {
         [indicatorView removeFromSuperview];
@@ -92,7 +94,7 @@
         
         
         if (![[NSFileManager defaultManager]fileExistsAtPath:cacheImgPath]) {
-            
+            cell.imgView.image = [UIImage imageNamed:@"asset@2x.png"];
             //Download img file __Async
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0),^{
                 
@@ -100,10 +102,8 @@
                 [imgData writeToFile:cacheImgPath atomically:YES];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    
-                    imgData = [NSData dataWithContentsOfFile:cacheImgPath];
-                    cell.imgView.image = [UIImage imageWithData:imgData];
+                    cell.imgView.image = [UIImage imageWithContentsOfFile:cacheImgPath];
+
                 });
                 
             });
@@ -115,7 +115,7 @@
             cell.imgView.image = [UIImage imageWithData:imgData];
             
         }
-
+        
     }
     
    
@@ -151,25 +151,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //NSLog(@"cellForRowAtIndexPath called!");
+    NSLog(@"cellForRowAtIndexPath called!");
     NSString *cellIdentifier = @"Cell";
     IHTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[IHTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         
     }
-       cell.imgView.image = [UIImage imageNamed:@"asset@2x.png"];
+    
+    
 //    if (indexPath.row ==2) {
 //        cell.catDscLabel.text = @"tqwertyuiosdfgdfghopfghjklcvbnmdfghjertyu45678klx00000000000000000cvbnm,dfghjklthjkl,";
 //    }else{
 //        cell.catDscLabel.text = @"test";
 //    }
     
+    
      [self updateUI:cell index:indexPath.row];
-    
-    
-   
-    
+  
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -182,9 +181,11 @@
  // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
  {
+     [tableView reloadData];
      
  // Navigation logic may go here, for example:
  // Create the next view controller.
+    
  IHLargeImageViewController *largeImgViewController = [[IHLargeImageViewController alloc] initWithNibName:@"IHLargeImageViewController" bundle:nil];
  
  // Pass the selected object to the new view controller.
