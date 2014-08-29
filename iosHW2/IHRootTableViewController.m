@@ -8,6 +8,7 @@
 
 #import "IHRootTableViewController.h"
 #import "IHTableViewCell.h"
+#import "IHLargeImageViewController.h"
 
 #define JSON_URL @"http://www.indexbricks.com/data/get_update.php?function_code=Profile&store=livebricks&version=0&language=TW"
 
@@ -16,13 +17,13 @@
 
 @end
 
+
 @implementation IHRootTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-   
     
     indicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     indicatorView.center = self.tableView.center;
@@ -31,6 +32,7 @@
     [self.view addSubview:indicatorView];
     
     imgPaths = [[NSMutableArray alloc]init];
+    
     
     
     //Async
@@ -57,11 +59,16 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = YES;
+
+}
 
 -(void)updateUI:(IHTableViewCell *)cell index:(int)rowIndex{
-    [indicatorView removeFromSuperview];
+    
     //NSLog(@"items_num:%d",[itemsArr count]);
     if ([jsonDataAll count]>0) {
+        [indicatorView removeFromSuperview];
         NSDictionary *itemsDic = [itemsArr objectAtIndex:rowIndex];
         NSString* catDescStr = [itemsDic objectForKey:@"category_description"];
         NSString* nameTitleStr = [itemsDic objectForKey:@"name_title"];
@@ -100,8 +107,7 @@
                 });
                 
             });
-            
-            
+         
             
         }else{
             
@@ -131,7 +137,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"numberOfRowsInSection called!");
+    //NSLog(@"numberOfRowsInSection called!");
     if ([itemsArr count]>0) {
         return [itemsArr count];
     }else{
@@ -167,20 +173,27 @@
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 100.0;
 }
 
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+
+ 
+ // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+ - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+     
+ // Navigation logic may go here, for example:
+ // Create the next view controller.
+ IHLargeImageViewController *largeImgViewController = [[IHLargeImageViewController alloc] initWithNibName:@"IHLargeImageViewController" bundle:nil];
+ 
+ // Pass the selected object to the new view controller.
+     largeImgViewController.imgFilePath = [imgPaths objectAtIndex:indexPath.row];
+     // Push the view controller.
+ [self.navigationController pushViewController:largeImgViewController animated:YES];
+ }
+ 
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -220,21 +233,6 @@
 }
 */
 
-/*
-#pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-*/
 
 @end

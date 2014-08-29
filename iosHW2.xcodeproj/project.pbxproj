@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B16104019AEFA200087F1A6 /* VALabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B16103F19AEFA200087F1A6 /* VALabel.m */; };
+		3B16104719B0279C0087F1A6 /* IHLargeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B16104519B0279C0087F1A6 /* IHLargeImageViewController.m */; };
+		3B16104819B0279C0087F1A6 /* IHLargeImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B16104619B0279C0087F1A6 /* IHLargeImageViewController.xib */; };
 		3B52C90119ADE501009E8B57 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B52C90019ADE501009E8B57 /* UIImageViewAligned.m */; };
 		3BBD853119AB38F500C3CB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBD853019AB38F500C3CB71 /* Foundation.framework */; };
 		3BBD853319AB38F500C3CB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBD853219AB38F500C3CB71 /* CoreGraphics.framework */; };
@@ -41,6 +43,9 @@
 /* Begin PBXFileReference section */
 		3B16103E19AEFA200087F1A6 /* VALabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VALabel.h; sourceTree = "<group>"; };
 		3B16103F19AEFA200087F1A6 /* VALabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VALabel.m; sourceTree = "<group>"; };
+		3B16104419B0279C0087F1A6 /* IHLargeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHLargeImageViewController.h; sourceTree = "<group>"; };
+		3B16104519B0279C0087F1A6 /* IHLargeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHLargeImageViewController.m; sourceTree = "<group>"; };
+		3B16104619B0279C0087F1A6 /* IHLargeImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHLargeImageViewController.xib; sourceTree = "<group>"; };
 		3B52C8FF19ADE501009E8B57 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
 		3B52C90019ADE501009E8B57 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
 		3BBD852D19AB38F500C3CB71 /* iosHW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosHW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +155,9 @@
 				3BBD858219AC4A4400C3CB71 /* IHRootTableViewController.h */,
 				3BBD858319AC4A4400C3CB71 /* IHRootTableViewController.m */,
 				3BBD858419AC4A4400C3CB71 /* IHRootTableViewController.xib */,
+				3B16104419B0279C0087F1A6 /* IHLargeImageViewController.h */,
+				3B16104519B0279C0087F1A6 /* IHLargeImageViewController.m */,
+				3B16104619B0279C0087F1A6 /* IHLargeImageViewController.xib */,
 				3BBD857019AB450E00C3CB71 /* IHTableViewCell.h */,
 				3BBD857119AB450E00C3CB71 /* IHTableViewCell.m */,
 				3BBD857219AB450E00C3CB71 /* IHTableViewCell.xib */,
@@ -270,6 +278,7 @@
 				3BBD858619AC4A4400C3CB71 /* IHRootTableViewController.xib in Resources */,
 				3BBD856A19AB43FA00C3CB71 /* asset@2x.png in Resources */,
 				3BBD854319AB38F500C3CB71 /* Images.xcassets in Resources */,
+				3B16104819B0279C0087F1A6 /* IHLargeImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +299,7 @@
 			files = (
 				3BBD857319AB450E00C3CB71 /* IHTableViewCell.m in Sources */,
 				3BBD858519AC4A4400C3CB71 /* IHRootTableViewController.m in Sources */,
+				3B16104719B0279C0087F1A6 /* IHLargeImageViewController.m in Sources */,
 				3BBD853D19AB38F500C3CB71 /* main.m in Sources */,
 				3B16104019AEFA200087F1A6 /* VALabel.m in Sources */,
 				3BBD854119AB38F500C3CB71 /* IHAppDelegate.m in Sources */,

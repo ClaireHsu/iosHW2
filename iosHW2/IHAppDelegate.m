@@ -19,7 +19,10 @@
     
     //IHRootViewController *rootViewController = [[IHRootViewController alloc]initWithNibName:@"IHRootViewController" bundle:nil];
     IHRootTableViewController *rootViewController = [[IHRootTableViewController alloc]initWithNibName:@"IHRootTableViewController" bundle:nil];
-    self.window.rootViewController = rootViewController;
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+    
+    
+    self.window.rootViewController = navController;
     
     [self.window makeKeyAndVisible];
     return YES;

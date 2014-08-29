@@ -22,9 +22,10 @@
         
         self.imgView = [[UIImageViewAligned alloc]initWithFrame:CGRectMake(0.0, 0.0, 100.0,100.0)];
         //self.imgView.backgroundColor = [UIColor greenColor];
+        self.imgView.alignLeft = YES;
         self.imgView.contentMode = UIViewContentModeScaleAspectFit;
         //self.imgView.clipsToBounds = YES;
-        self.imgView.alignLeft = YES;
+        
         
         [self.contentView addSubview:self.imgView];
         
