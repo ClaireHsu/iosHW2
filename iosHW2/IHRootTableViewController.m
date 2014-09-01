@@ -166,7 +166,7 @@
 //        cell.catDscLabel.text = @"test";
 //    }
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
      [self updateUI:cell index:indexPath.row];
   
     return cell;
